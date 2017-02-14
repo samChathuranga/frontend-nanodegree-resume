@@ -19,6 +19,13 @@ var bio = {
 		$('#header').prepend (formattedRole);
 		$('#header').prepend (formattedName);
 
+		// Bio pic
+		var formattedBioPic = HTMLbioPic.replace ('%data%', bio.biopic);
+		$('#header').append (formattedBioPic);
+
+		// Welcome messgae
+		var formattedWelcomeMessage = HTMLwelcomeMsg.replace ('%data%', bio.welcomeMessage);
+		$('#header').append (formattedWelcomeMessage);
 
 		// Render contact details
 		var renderContacts = function () {
@@ -49,8 +56,58 @@ var bio = {
 	}
 }
 
+// Education
+
+var education = {
+	"schools": [{
+		"name": 'Dharmapala Vidyalaya',
+		"location": "Pannipitiya",
+		"degree": "Advanced Level",
+		"majors":  ["GCE A/L Combined Maths"],
+		"dates": "2007 - 2009"
+	}],
+	"onlineCourses": [{
+		"title": "Frontend developer nano degree",
+		"school": "Udacity",
+		"dates": "2016 Oct - Present",
+		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+	}],
+	display: function () {
+
+		// var HTMLschoolName = '<a href="#">%data%';
+		// var HTMLschoolDegree = ' -- %data%</a>';
+		// var HTMLschoolDates = '<div class="date-text">%data%</div>';
+		// var HTMLschoolLocation = '<div class="location-text">%data%</div>';
+		// var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+
+		$('#education').append (HTMLschoolStart);
+
+		education.schools.forEach (function (school) {
+
+			var formattedDegree = HTMLschoolDegree.replace ('%data%', school.degree),
+					formattedSchoolName = HTMLschoolName.replace ('%data%', school.name),
+					formattedSchoolNameAndDegre = formattedSchoolName + formattedDegree,
+					formattedSchoolDates = HTMLschoolDates.replace ('%data%', school.dates),
+					formattedSchoolLocation = HTMLschoolLocation.replace ('%data%', school.location);
+
+			$(".education-entry:last").append (formattedSchoolNameAndDegre);
+			$(".education-entry:last").append (formattedSchoolDates);
+			$(".education-entry:last").append (formattedSchoolLocation);
+			$(".education-entry:last").append (formattedSchoolLocation);
+
+			school.majors.forEach (function (major) {
+				var formattedMajor = HTMLschoolMajor.replace ('%data%', major);
+				$(".education-entry:last").append (formattedMajor);
+			})
+
+		});
+
+	}
+}
+
 
 bio.display ();
+education.display ();
 
 // Appending skills
 // if (bio.skills.length > 0 ) {
