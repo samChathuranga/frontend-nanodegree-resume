@@ -219,3 +219,11 @@ span {
     display: block;
   }
 }
+
+/* Customization */
+h1 {
+	color: #eadbc2;
+}
+#name+span {
+	color: #b5b5b5;
+}

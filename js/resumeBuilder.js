@@ -1,4 +1,4 @@
-// Bio data
+// ============================= Bio data
 var bio = {
 	"name": "Sameera Chathuranga",
 	"role": "Frontend developer",
@@ -36,7 +36,8 @@ var bio = {
 				$('#topContacts').append (formattedContact);
 			});
 
-		}
+		};
+
 		renderContacts();
 
 		// Render skills
@@ -56,7 +57,7 @@ var bio = {
 	}
 }
 
-// Education
+// ============================= Education
 
 var education = {
 	"schools": [{
@@ -74,11 +75,6 @@ var education = {
 	}],
 	display: function () {
 
-		// var HTMLschoolName = '<a href="#">%data%';
-		// var HTMLschoolDegree = ' -- %data%</a>';
-		// var HTMLschoolDates = '<div class="date-text">%data%</div>';
-		// var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-		// var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 		$('#education').append (HTMLschoolStart);
 
@@ -93,7 +89,6 @@ var education = {
 			$(".education-entry:last").append (formattedSchoolNameAndDegre);
 			$(".education-entry:last").append (formattedSchoolDates);
 			$(".education-entry:last").append (formattedSchoolLocation);
-			$(".education-entry:last").append (formattedSchoolLocation);
 
 			school.majors.forEach (function (major) {
 				var formattedMajor = HTMLschoolMajor.replace ('%data%', major);
@@ -101,6 +96,8 @@ var education = {
 			})
 
 		});
+
+
 
 	}
 }
