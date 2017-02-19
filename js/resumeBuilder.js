@@ -133,13 +133,6 @@ var work = {
 	],
 	display: function () {
 
-		// var HTMLworkStart = '<div class="work-entry"></div>';
-		// var HTMLworkEmployer = '<a href="#">%data%';
-		// var HTMLworkTitle = ' - %data%</a>';
-		// var HTMLworkDates = '<div class="date-text">%data%</div>';
-		// var HTMLworkLocation = '<div class="location-text">%data%</div>';
-		// var HTMLworkDescription = '<p><br>%data%</p>';
-
 		$('#workExperience').append (HTMLworkStart);
 
 		work.jobs.forEach (function (job) {
@@ -155,17 +148,68 @@ var work = {
 			$(".work-entry:last").append (formattedWorkDays);
 			$(".work-entry:last").append (formattedWorkLocation);
 			$(".work-entry:last").append (formattedDesc);
-		})
 
+		});
 
+	}
+}
+
+// ============================= Work
+
+// projects: array of objects with
+//             title: string
+//             dates: string (works with a hyphen between them)
+//             description: string
+//             images: array with string urls
+//       display: function
+
+var projects = {
+	"projects": [
+		{
+			"title": "Udacity Online resume project",
+			"dates": "2017 Jan - 2017 Feb",
+			"description": "This is project description https://github.com/samChathuranga/frontend-nanodegree-resume",
+			"images": ['images/197x148.gif', 'images/197x148.gif']
+		}
+	],
+	"display": function () {
+
+		$('#projects').append (HTMLprojectStart);
+
+		// var HTMLprojectStart = '<div class="project-entry"></div>';
+		// var HTMLprojectTitle = '<a href="#">%data%</a>';
+		// var HTMLprojectDates = '<div class="date-text">%data%</div>';
+		// var HTMLprojectDescription = '<p><br>%data%</p>';
+		// var HTMLprojectImage = '<img src="%data%">';
+
+		projects.projects.forEach (function (project) {
+
+			var formattedProjectTitle = HTMLprojectTitle.replace ('%data%', project.title),
+					formattedProjectDates = HTMLprojectDates.replace ('%data%', project.dates),
+					formattedProjDesc = HTMLprojectDescription.replace ('%data%', project.description);
+
+			var projectImages = '';
+
+			project.images.forEach (function (img) {
+				projectImages += HTMLprojectImage.replace ('%data%', img);
+			});
+
+			$('.project-entry:last').append (formattedProjectTitle);
+			$('.project-entry:last').append (formattedProjectDates);
+			$('.project-entry:last').append (formattedProjDesc);
+			$('.project-entry:last').append (projectImages);
+
+		});
 
 	}
 }
 
 
+
 bio.display ();
 education.display ();
 work.display ();
+projects.display ();
 
 // Appending skills
 // if (bio.skills.length > 0 ) {
