@@ -7,7 +7,7 @@ var bio = {
 		"email": "c.a.sameera@gmail.com",
 		"github": "https://github.com/samChathuranga",
 		"twitter": "@hjskhkshd987sd897",
-		"Location": "Colombo"
+		"location": "Colombo"
 	},
 	"welcomeMessage": "Hey, this is my welcome message",
 	"skills": ["Web desiging", "ReactJS", "AngularJS"],
@@ -34,6 +34,7 @@ var bio = {
 			Object.keys(bio.contacts).forEach(function(key) {
 				var formattedContact = HTMLcontactGeneric.replace ('%contact%', key).replace ('%data%', bio.contacts[key]);
 				$('#topContacts').append (formattedContact);
+				$("#footerContacts").append(formattedContact);
 			});
 
 		};
@@ -205,11 +206,15 @@ var projects = {
 }
 
 
-
 bio.display ();
-education.display ();
 work.display ();
 projects.display ();
+education.display ();
+
+$('#mapDiv').append (googleMap)
+
+
+
 
 // Appending skills
 // if (bio.skills.length > 0 ) {
