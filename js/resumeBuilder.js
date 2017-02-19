@@ -101,14 +101,6 @@ var education = {
 		$("#education").append (HTMLonlineClasses);
 		$('#education').append (HTMLschoolStart);
 
-		/*
-		var HTMLonlineClasses = '<h3>Online Classes</h3>';
-		var HTMLonlineTitle = '<a href="#">%data%';
-		var HTMLonlineSchool = ' - %data%</a>';
-		var HTMLonlineDates = '<div class="date-text">%data%</div>';
-		var HTMLonlineURL = '<br><a href="#">%data%</a>';
-		*/
-
 		education.onlineCourses.forEach (function (online) {
 
 			var formattedOnlineTitle = HTMLonlineTitle.replace ('%data%', online.title),
@@ -125,10 +117,32 @@ var education = {
 
 	}
 }
+//
+// jobs: array of objects with
+//            employer: string
+//            title: string
+//            location: string
+//            dates: string (Can be 'in progress')
+//            description: string
+//       display: function
+
+// ============================= Work
+
+var work = {
+	"employer": "Rezgateway Inc",
+	"title": "Frontend developer",
+	"location": "Colombo - Sri Lanka",
+	"dates": "2013 September, In progress",
+	"description": "This is the work description",
+	display: function () {
+
+	}
+}
 
 
 bio.display ();
 education.display ();
+work.description ();
 
 // Appending skills
 // if (bio.skills.length > 0 ) {
