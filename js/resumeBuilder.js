@@ -98,6 +98,30 @@ var education = {
 		});
 
 
+		$("#education").append (HTMLonlineClasses);
+		$('#education').append (HTMLschoolStart);
+
+		/*
+		var HTMLonlineClasses = '<h3>Online Classes</h3>';
+		var HTMLonlineTitle = '<a href="#">%data%';
+		var HTMLonlineSchool = ' - %data%</a>';
+		var HTMLonlineDates = '<div class="date-text">%data%</div>';
+		var HTMLonlineURL = '<br><a href="#">%data%</a>';
+		*/
+
+		education.onlineCourses.forEach (function (online) {
+
+			var formattedOnlineTitle = HTMLonlineTitle.replace ('%data%', online.title),
+					formattedOnlineSchool = HTMLonlineSchool.replace ('%data%', online.school),
+					renderedOnlineClass = formattedOnlineTitle + formattedOnlineSchool,
+					formattedOnlineDate = HTMLonlineDates.replace ('%data%', online.dates),
+					formattedOnlineUrl = HTMLonlineURL.replace ('%data%', online.url);
+
+				$(".education-entry:last").append (renderedOnlineClass);
+				$(".education-entry:last").append (formattedOnlineDate);
+				$(".education-entry:last").append (formattedOnlineUrl);
+
+		});
 
 	}
 }
