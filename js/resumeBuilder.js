@@ -142,7 +142,20 @@ var work = {
 
 		$('#workExperience').append (HTMLworkStart);
 
+		work.jobs.forEach (function (job) {
 
+			var formattedEmployer = HTMLworkEmployer.replace ('%data%', job.employer),
+					formattedWorkTitle = HTMLworkTitle.replace ('%data%', job.title),
+					renderedTitle = formattedEmployer + formattedWorkTitle,
+					formattedWorkDays = HTMLworkDates.replace ('%data%', job.dates),
+					formattedWorkLocation = HTMLworkLocation.replace ('%data%', job.location),
+					formattedDesc = HTMLworkDescription.replace ('%data%', job.description);
+
+			$(".work-entry:last").append (renderedTitle);
+			$(".work-entry:last").append (formattedWorkDays);
+			$(".work-entry:last").append (formattedWorkLocation);
+			$(".work-entry:last").append (formattedDesc);
+		})
 
 
 
@@ -152,7 +165,7 @@ var work = {
 
 bio.display ();
 education.display ();
-work.description ();
+work.display ();
 
 // Appending skills
 // if (bio.skills.length > 0 ) {
