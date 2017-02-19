@@ -56,7 +56,7 @@ var bio = {
 		renderSkills();
 
 	}
-}
+};
 
 // ============================= Education
 
@@ -117,8 +117,7 @@ var education = {
 		});
 
 	}
-}
-
+};
 
 // ============================= Work
 
@@ -153,7 +152,7 @@ var work = {
 		});
 
 	}
-}
+};
 
 // ============================= Work
 
@@ -190,7 +189,7 @@ var projects = {
 		});
 
 	}
-}
+};
 
 
 bio.display ();
@@ -198,4 +197,4 @@ work.display ();
 projects.display ();
 education.display ();
 
-$('#mapDiv').append (googleMap)
+$('#mapDiv').append (googleMap);
