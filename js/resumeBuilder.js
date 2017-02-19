@@ -117,24 +117,34 @@ var education = {
 
 	}
 }
-//
-// jobs: array of objects with
-//            employer: string
-//            title: string
-//            location: string
-//            dates: string (Can be 'in progress')
-//            description: string
-//       display: function
+
 
 // ============================= Work
 
 var work = {
-	"employer": "Rezgateway Inc",
-	"title": "Frontend developer",
-	"location": "Colombo - Sri Lanka",
-	"dates": "2013 September, In progress",
-	"description": "This is the work description",
+	jobs: [
+		{
+			"employer": "Rezgateway Inc",
+			"title": "Frontend developer",
+			"location": "Colombo - Sri Lanka",
+			"dates": "2013 September, In progress",
+			"description": "This is the work description",
+		}
+	],
 	display: function () {
+
+		// var HTMLworkStart = '<div class="work-entry"></div>';
+		// var HTMLworkEmployer = '<a href="#">%data%';
+		// var HTMLworkTitle = ' - %data%</a>';
+		// var HTMLworkDates = '<div class="date-text">%data%</div>';
+		// var HTMLworkLocation = '<div class="location-text">%data%</div>';
+		// var HTMLworkDescription = '<p><br>%data%</p>';
+
+		$('#workExperience').append (HTMLworkStart);
+
+
+
+
 
 	}
 }
