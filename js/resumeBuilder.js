@@ -157,13 +157,6 @@ var work = {
 
 // ============================= Work
 
-// projects: array of objects with
-//             title: string
-//             dates: string (works with a hyphen between them)
-//             description: string
-//             images: array with string urls
-//       display: function
-
 var projects = {
 	"projects": [
 		{
@@ -176,12 +169,6 @@ var projects = {
 	"display": function () {
 
 		$('#projects').append (HTMLprojectStart);
-
-		// var HTMLprojectStart = '<div class="project-entry"></div>';
-		// var HTMLprojectTitle = '<a href="#">%data%</a>';
-		// var HTMLprojectDates = '<div class="date-text">%data%</div>';
-		// var HTMLprojectDescription = '<p><br>%data%</p>';
-		// var HTMLprojectImage = '<img src="%data%">';
 
 		projects.projects.forEach (function (project) {
 
@@ -212,49 +199,3 @@ projects.display ();
 education.display ();
 
 $('#mapDiv').append (googleMap)
-
-
-
-
-// Appending skills
-// if (bio.skills.length > 0 ) {
-// 	$('#header').append (HTMLskillsStart);
-//
-// 	var formattedSkills = HTMLskills.replace ("%data%", bio.skills[0]);
-// 	$('#skills').append (formattedSkills);
-//
-// 	formattedSkills = HTMLskills.replace ("%data%", bio.skills[1]);
-// 	$('#skills').append (formattedSkills);
-//
-// 	formattedSkills = HTMLskills.replace ("%data%", bio.skills[2]);
-// 	$('#skills').append (formattedSkills);
-//
-// 	formattedSkills = HTMLskills.replace ("%data%", bio.skills[3]);
-// 	$('#skills').append (formattedSkills);
-//
-// }
-//
-//
-// // Appending work experience
-// function displayWork () {
-//
-// 	for (job in work.jobs) {
-// 		$('#workExperience').append (HTMLworkStart);
-//
-// 		var formattedTitle = HTMLworkTitle.replace ('%data%', work.jobs[job].title)
-// 				formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer),
-// 				formattedEmployerTitle = formattedEmployer + formattedTitle;
-//
-// 		$(".work-entry:last").append(formattedEmployerTitle);
-//
-//
-// 		var formattedDates = HTMLworkDates.replace ("%data%", work.jobs[job].workDates);
-// 		$(".work-entry:last").append(formattedDates);
-//
-// 		var description = HTMLworkDescription.replace ("%data%", work.jobs[job].description)
-// 	  $(".work-entry:last").append(description);
-// 	}
-//
-// }
-//
-// displayWork ();
